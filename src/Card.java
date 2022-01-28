@@ -59,5 +59,16 @@ public class Card {
     public void setPlayable(boolean playable) {
         this.playable = playable;
     }
+
     // METHODS
+    public String toString(){
+        String report="";
+        report=this.color + "\n" + this.rank + "\n" + this.symbol + "\n" + this.value + "\n" + this.playable; 
+        
+        
+        return report;
+    }
+    public boolean cardEqual(Card C){
+        return this.value==C.value;
+    }
 }
