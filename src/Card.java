@@ -2,9 +2,21 @@ public class Card {
     // PROPERTIES
     private String color;
     private char rank;
+    private char symbol;
+    private int value;
+    private boolean playable;
 
     // CONSTRUCTORS
-    public Card() {}
+    public Card() {
+    }
+
+    public Card(String color, char rank, char symbol, int value, boolean playable) {
+        this.color = color;
+        this.rank = rank;
+        this.symbol = symbol;
+        this.value = value;
+        this.playable = playable;
+    }
 
     // ACCESSORS
     public String getColor() {
@@ -13,6 +25,18 @@ public class Card {
 
     public char getRank() {
         return this.rank;
+    }
+
+    public char getSymbol() {
+        return this.symbol;
+    }
+
+    public int getValue() {
+        return this.value;
+    }
+
+    public boolean getPlayable() {
+        return this.playable;
     }
 
     // MUTATORS
@@ -24,5 +48,16 @@ public class Card {
         this.rank = rank;
     }
 
+    public void setSymbol(char symbol) {
+        this.symbol = symbol;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public void setPlayable(boolean playable) {
+        this.playable = playable;
+    }
     // METHODS
 }
