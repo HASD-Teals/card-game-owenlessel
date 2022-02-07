@@ -19,6 +19,15 @@ public class Deck {
         return this.cards;
     }
 
+    public int getNumCards() {
+        return cards.length;
+    }
+
+    public String getCardAt(int position) {
+        return (cards[position].getSymbol() + " " + cards[position].getValue() + " " + cards[position].getColor()
+                + "\n");
+    }
+
     // MUTATORS
     public void setCards(Card[] cards) {
         this.cards = cards;
@@ -28,27 +37,86 @@ public class Deck {
     public void shuffleCards() {
         // Shuffle this.cards in a random order
         Random rand = new Random();
+        for (int i = 0; i < cards.length; i++) {
+            int j = rand.nextInt(cards.length - 1);
+            Card temp = cards[j];
+            cards[j] = cards[i];
+            cards[i] = temp;
+        }
     }
 
     private void makeDeck() {
         int counter = 0;
+        Card temp = null;
         for (int i = 2; i <= 14; i++) {
-            Card temp = new Card("red", 'h', 'h', i, true);
+            if (i == 10) {
+                temp = new Card("red", 't', 'h', i, true);
+            } else if (i == 11) {
+                temp = new Card("red", 'j', 'h', i, true);
+            } else if (i == 12) {
+                temp = new Card("red", 'q', 'h', i, true);
+            } else if (i == 13) {
+                temp = new Card("red", 'k', 'h', i, true);
+            } else if (i == 14) {
+                temp = new Card("red", 'a', 'h', i, true);
+            } else {
+                String s = "" + i + "";
+                temp = new Card("red", s.charAt(0), 'h', i, true);
+            }
             this.cards[counter] = temp;
             counter++;
         }
         for (int i = 2; i <= 14; i++) {
-            Card temp = new Card("red", 'd', 'd', i, true);
+            if (i == 10) {
+                temp = new Card("red", 't', 'd', i, true);
+            } else if (i == 11) {
+                temp = new Card("red", 'j', 'd', i, true);
+            } else if (i == 12) {
+                temp = new Card("red", 'q', 'd', i, true);
+            } else if (i == 13) {
+                temp = new Card("red", 'k', 'd', i, true);
+            } else if (i == 14) {
+                temp = new Card("red", 'a', 'd', i, true);
+            } else {
+                String s = "" + i + "";
+                temp = new Card("red", s.charAt(0), 'd', i, true);
+            }
             this.cards[counter] = temp;
             counter++;
         }
         for (int i = 2; i <= 14; i++) {
-            Card temp = new Card("black", 'c', 'c', i, true);
+            if (i == 10) {
+                temp = new Card("black", 't', 'c', i, true);
+            } else if (i == 11) {
+                temp = new Card("black", 'j', 'c', i, true);
+            } else if (i == 12) {
+                temp = new Card("black", 'q', 'c', i, true);
+            } else if (i == 13) {
+                temp = new Card("black", 'k', 'c', i, true);
+            } else if (i == 14) {
+                temp = new Card("black", 'a', 'c', i, true);
+            } else {
+                String s = "" + i + "";
+                temp = new Card("black", s.charAt(0), 'c', i, true);
+            }
             this.cards[counter] = temp;
             counter++;
         }
         for (int i = 2; i <= 14; i++) {
-            Card temp = new Card("black", 's', 's', i, true);
+            if (i == 10) {
+                temp = new Card("black", 't', 's', i, true);
+            } else if (i == 11) {
+                temp = new Card("black", 'j', 's', i, true);
+            } else if (i == 12) {
+                temp = new Card("black", 'q', 's', i, true);
+            } else if (i == 13) {
+                temp = new Card("black", 'k', 's', i, true);
+            } else if (i == 14) {
+                temp = new Card("black", 'a', 's', i, true);
+            } else {
+                String s = "" + i + "";
+                temp = new Card("black", s.charAt(0), 's', i, true);
+            }
             this.cards[counter] = temp;
             counter++;
         }
@@ -65,8 +133,13 @@ public class Deck {
 
     public String toString() {
         String deckReport = "";
-        for (int i = 0; i < cards.length; i++) {
-            deckReport = deckReport + (cards[i].getSymbol() + " " + cards[i].getRank() + " " +  cards[i].getColor() + "\n");
+        // for (int i = 0; i < cards.length; i++) {
+        // deckReport = deckReport
+        // + (cards[i].getSymbol() + " " + cards[i].getRank() + " " +
+        // cards[i].getColor() + "\n");
+        // }
+        for (Card card : cards) {
+            deckReport += card.toString();
         }
         return deckReport;
     }

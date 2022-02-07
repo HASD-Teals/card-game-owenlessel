@@ -63,7 +63,7 @@ public class Card {
     // METHODS
     public String toString(){
         String report="";
-        report=this.color + "\n" + this.rank + "\n" + this.symbol + "\n" + this.value + "\n" + this.playable; 
+        report=this.color + " " + this.rank + " " + this.symbol + " " + this.value + "\n"; 
         
         
         return report;
