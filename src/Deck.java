@@ -23,9 +23,8 @@ public class Deck {
         return cards.length;
     }
 
-    public String getCardAt(int position) {
-        return (cards[position].getSymbol() + " " + cards[position].getValue() + " " + cards[position].getColor()
-                + "\n");
+    public Card getCardAt(int position) {
+        return this.cards[position];
     }
 
     // MUTATORS

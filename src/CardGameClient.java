@@ -10,7 +10,7 @@ public class CardGameClient {
 
         int matches=0;
         for(int i=0;i<test1.getNumCards();i++){
-            if(test1.getCardAt(i)==test2.getCardAt(i)){
+            if(test1.getCardAt(i).cardEqual(test2.getCardAt(i))){
                 System.out.println(test1.getCardAt(i));
                 matches++;
 

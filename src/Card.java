@@ -69,6 +69,6 @@ public class Card {
         return report;
     }
     public boolean cardEqual(Card C){
-        return this.value==C.value;
+        return this.value==C.value && this.symbol==C.symbol;
     }
 }
